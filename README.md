@@ -8,5 +8,5 @@ uefi-hii-example
 Purpose
 -------
 Example UEFI codes for document  
-######_UEFI HII(Human Interface Infrastructure) Programming Basic_#####
+######_UEFI HII(Human Interface Infrastructure) Programming Basic_######
 <http://www.slideshare.net/wiliwe/hiiprogrammingbasic-20120214>  
