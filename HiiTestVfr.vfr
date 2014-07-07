@@ -1,0 +1,37 @@
+// *++
+//
+// Module Name:
+//
+//   HiiTestVfr.vfr
+//
+// Abstract:
+//
+//   HII Test Form.
+//
+// Revision History:
+//
+// --*/
+
+//#define HII_TEST_FORM_GUID    { 0x1BA9A291, 0xB110, 0x4F08, 0xA8, 0x73, 0xA8, 0x22, 0x37, 0x71, 0xA9, 0x55 }
+#include "HiiTestData.h"
+
+formset
+  guid     = HII_TEST_FORM_GUID,
+  title    = STRING_TOKEN(STR_HIITEST_FORM_SET_TITLE),
+  help     = STRING_TOKEN(STR_HIITEST_FORM_SET_HELP),
+
+  form formid = 1,
+    title  = STRING_TOKEN(STR_HIITEST_GPIOTEST_FORM_TITLE);
+
+  	text
+    help   = STRING_TOKEN(STR_HIITEST_VERSION_HELP),
+    text   = STRING_TOKEN(STR_HIITEST_VERSION_TEXT),
+	text   = STRING_TOKEN(STR_HIITEST_NULL);
+
+    subtitle text = STRING_TOKEN(STR_HIITEST_NULL);
+
+    subtitle text = STRING_TOKEN(STR_HIITEST_ESC);
+
+  endform;
+
+endformset;

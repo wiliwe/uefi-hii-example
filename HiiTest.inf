@@ -1,0 +1,59 @@
+#/** @file HiiTest.inf
+#  
+#  HII test application
+#
+#  
+#**/
+
+#==============================================================================
+#                              EDIT HISTORY
+#
+#  $Header:  $
+#  $DateTime: 2012/02/13 00:26:45 $
+#  $Author: William $
+#
+# when       who        what, where, why
+# --------   ---        ----------------------------------------------------------
+# 02/13/12   William    Init.
+#
+#==============================================================================
+
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = HiiTest
+  FILE_GUID                       = 7C9D506E-B1D9-4246-A815-4A956298C4F2
+  MODULE_TYPE                     = UEFI_APPLICATION
+  VERSION_STRING                  = 1.0
+  ENTRY_POINT                     = HiiTestMain
+
+[Sources.common]
+  HiiTest.c
+  HiiTestData.h
+  HiiTest.h
+  HiiTestStrings.uni
+  HiiTestVfr.vfr
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  QcomPkg/QcomPkg.dec
+
+[LibraryClasses]
+  BaseLib
+  UefiLib
+  UefiApplicationEntryPoint
+  TestInterfaceLib
+  PrintLib
+  HiiLib
+  UefiHiiServicesLib
+
+[Guids]
+  gEfiIfrTianoGuid                              ## CONSUMES ## GUID (Extended IFR Guid Opcode)
+  gEfiHiiPlatformSetupFormsetGuid               ## CONSUMES ## GUID (Indicate the formset class guid to be displayed)
+  gEfiHiiDriverHealthFormsetGuid                ## CONSUMES ## GUID (Indicate the Driver Health formset class guid to be displayed)
+  
+[Protocols]
+  gEfiGraphicsOutputProtocolGuid                ## PROTOCOL SOMETIMES_CONSUMES
+  gEfiHiiStringProtocolGuid                     ## PROTOCOL CONSUMES
+  gEfiFormBrowser2ProtocolGuid                  ## PROTOCOL CONSUMES
+  gEfiHiiDatabaseProtocolGuid                   ## CONSUMES
